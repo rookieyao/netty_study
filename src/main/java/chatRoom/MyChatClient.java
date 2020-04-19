@@ -28,10 +28,10 @@ public class MyChatClient {
             Channel channel =  bootstrap.connect("localhost",10092).sync().channel();
 
             //死循环，实时读取键盘输入的内容
-            for (;;){
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-                channel.writeAndFlush(bufferedReader.readLine()+"\r\n");
-            }
+//            for (;;){
+//                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//                channel.writeAndFlush(bufferedReader.readLine()+"\r\n");
+//            }
         } finally {
             eventLoopGroup.shutdownGracefully();
         }
